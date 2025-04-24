@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "SENDGRID_API_KEY": "@sendgrid_api_key",
+    "NEXT_PUBLIC_APP_URL": "@next_public_app_url",
+    "CRON_SECRET": "@cron_secret"
+  },
+  "crons": [
+    {
+      "path": "/api/cron/check-warranties",
+      "schedule": "0 9 * * *"
+    }
+  ]
+}
